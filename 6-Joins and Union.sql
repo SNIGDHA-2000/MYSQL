@@ -42,50 +42,17 @@ INSERT INTO Persons (Id, Fname, Lname, Population, Rating, Country_Id, Country_n
 (10, 'Sakura', 'Tanaka', 170000, 4.4, 10, 'Japan');
 
 -- (1)Perform inner join, Left join, and Right join on the tables.
-SELECT
-    C.Country_name AS Country,
-    P.Fname,
-    P.Lname
-FROM
-    Country AS C
-INNER JOIN
-    Persons AS P ON C.Id = P.Country_Id;
+SELECT C.Country_name AS Country,P.Fname,P.Lname FROM Country AS C INNER JOIN Persons AS P ON C.Id = P.Country_Id;
     
-    
-SELECT
-    C.Country_name AS Country,
-    P.Fname,
-    P.Lname
-FROM
-    Country AS C
-LEFT JOIN
-    Persons AS P ON C.Id = P.Country_Id;
+SELECT C.Country_name AS Country,P.Fname,P.Lname FROM Country AS C LEFT JOIN Persons AS P ON C.Id = P.Country_Id;
 
-SELECT
-    C.Country_name AS Country,
-    P.Fname,
-    P.Lname
-FROM
-    Country AS C
-RIGHT JOIN
-    Persons AS P ON C.Id = P.Country_Id;
+SELECT C.Country_name AS Country,P.Fname,P.Lname FROM Country AS C RIGHT JOIN Persons AS P ON C.Id = P.Country_Id;
 
 --  (2)List all distinct country names from both the Country and Persons tables.
- SELECT Country_name FROM Country
-UNION
-SELECT Country_name FROM Persons;
+ SELECT Country_name FROM Country UNION SELECT Country_name FROM Persons;
 
 -- (3)List all country names from both the Country and Persons tables, including duplicates. 
-SELECT Country_name FROM Country
-UNION ALL
-SELECT Country_name FROM Persons;
+SELECT Country_name FROM Country UNION ALL SELECT Country_name FROM Persons;
 
 -- (4)Round the ratings of all persons to the nearest integer in the Persons table.
-SELECT
-    Id,
-    Fname,
-    Lname,
-    Rating,
-    ROUND(Rating) AS RoundedRating
-FROM
-    Persons;
+SELECT Id,Fname,Lname,Rating, ROUND(Rating) AS RoundedRating FROM Persons;
