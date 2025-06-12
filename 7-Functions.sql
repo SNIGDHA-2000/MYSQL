@@ -72,36 +72,14 @@ DELIMITER ;
 
 -- 3. Write a select query to fetch the Age of all persons using the function that has been created. 
 
-SELECT
-    Id,
-    Fname,
-    Lname,
-    DOB,
-    CalculateAge(DOB) AS Age
-FROM
-    Persons;
+SELECT Id,Fname,Lname,DOB,CalculateAge(DOB) AS Age FROM Persons;
 
 -- 4. Find the length of each country name in the Country table. 
-SELECT
-    Country_name,
-    LENGTH(Country_name) AS CountryNameLength -- Use LEN(Country_name) for SQL Server
-FROM
-    Country;
+SELECT Country_name,LENGTH(Country_name) AS CountryNameLength FROM Country;
 
 -- 5. Extract the first three characters of each countrys name in the Country table. 
-SELECT
-    Country_name,
-    SUBSTRING(Country_name, 1, 3) AS FirstThreeChars -- Use SUBSTR(Country_name, 1, 3) for Oracle
-FROM
-    Country;
-
-
+SELECT Country_name,SUBSTRING(Country_name, 1, 3) AS FirstThreeChars FROM Country;
 
 -- 6. Convert all country names to uppercase and lowercase in the Country table.
 
-SELECT
-    Country_name,
-    UPPER(Country_name) AS UppercaseCountryName,
-    LOWER(Country_name) AS LowercaseCountryName
-FROM
-    Country;
+SELECT Country_name,UPPER(Country_name) AS UppercaseCountryName,LOWER(Country_name) AS LowercaseCountryName FROM Country;
