@@ -43,34 +43,19 @@ INSERT INTO Persons (Id, Fname, Lname, Population, Rating, Country_Id, Country_n
 (10, 'Sakura', 'Tanaka', 170000, 4.4, 10, 'Japan');
 
 -- 1. Find the number of persons in each country. 
-SELECT Country_name,
-COUNT(Id) AS NumberOfPersons
-FROM Persons
-GROUP BY Country_name;
+SELECT Country_name,COUNT(Id) AS NumberOfPersons FROM Persons GROUP BY Country_name;
 
 -- 2. Find the number of persons in each country sorted from high to low. 
-SELECT Country_name,
-COUNT(Id) AS NumberOfPersons
-FROM Persons
-GROUP BY Country_name
-ORDER BY NumberOfPersons DESC;
+SELECT Country_name,COUNT(Id) AS NumberOfPersons FROM Persons GROUP BY Country_name ORDER BY NumberOfPersons DESC;
 
 -- 3. Find out an average rating for Persons in respective countries if the average is greater than 3.0 
-SELECT Country_name,
-AVG(Rating) AS AverageRating
-FROM Persons
-GROUP BY Country_name
-HAVING AVG(Rating) > 3.0;
+SELECT Country_name,AVG(Rating) AS AverageRating FROM Persons GROUP BY Country_name HAVING AVG(Rating) > 3.0;
 
 -- 4. Find the countries with the same rating as the USA. 
-SELECT P.Country_name,P.Rating
-FROM Persons P
-WHERE P.Rating = (SELECT Rating FROM Persons WHERE Country_name = 'USA');
+SELECT P.Country_name,P.Rating FROM Persons P WHERE P.Rating = (SELECT Rating FROM Persons WHERE Country_name = 'USA');
 
 -- 5. Select all countries whose population is greater than the average population of all nations. 
-SELECT Country_name,Population
-FROM Country
-WHERE Population > (SELECT AVG(Population) FROM Country);
+SELECT Country_name,Population FROM Country WHERE Population > (SELECT AVG(Population) FROM Country);
     
     CREATE database sales ;
 USE sales;
