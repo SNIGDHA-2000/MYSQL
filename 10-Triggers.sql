@@ -39,8 +39,7 @@ END;
 
 DELIMITER ;
 
-INSERT INTO teachers (id, name, subject, experience, salary)
-VALUES (9, 'Ivy', 'Art', 4, -20000);
+INSERT INTO teachers (id, name, subject, experience, salary) VALUES (9, 'Ivy', 'Art', 4, -20000);
 
 -- 3. Create an after insert trigger named after_insert_teacher that inserts a row with teacher_id,action, timestamp to a table called teacher_log when a new entry gets inserted to the teacher table. tecaher_id -> column of teacher table, action -> the trigger action, timestamp -> time at which the new row has got inserted. 
 CREATE TABLE teacher_log (
