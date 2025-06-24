@@ -33,7 +33,7 @@ CREATE TABLE Books (
     Book_title VARCHAR(100),
     Category VARCHAR(50),
     Rental_Price INT,
-    Status VARCHAR(3), -- 'Yes' or 'No'
+    Status VARCHAR(3), 
     Author VARCHAR(50),
     Publisher VARCHAR(50)
 );
